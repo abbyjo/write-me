@@ -22,11 +22,11 @@ function generateMarkdown(data) {
   ## Description <br> 
   ${data.description} <br>
   ## Table of Contents <br>
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [License](#license)
-    - [Contributing](#contributing)
-    - [Questions](#questions) <br>
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Questions](#questions) <br>
   ## Installation <br>
   ${data.description} <br>
   ## Usage <br>
