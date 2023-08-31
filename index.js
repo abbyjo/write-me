@@ -2,6 +2,7 @@
 const md = require('./utils/generateMarkdown.js');
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 //Array of questions for user input
 const questions = [
@@ -39,7 +40,7 @@ const questions = [
         type: 'list',
         message: 'What license is your project under?',
         name: 'license',
-        choices: ['MIT', 'Apache 2.0', 'ISC', 'MPL 2.0', 'None'],
+        choices: ['MIT', 'Apache 2.0', 'ISC', 'MPL', 'None'],
       },
       {
         type: 'input',
@@ -54,7 +55,12 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, md.generateMarkdown(data), function (err){
+       if (err) throw err;
+       console.log("README written!") 
+    })
+}
 
 // TODO: Create a function to initialize app
 function init() {
