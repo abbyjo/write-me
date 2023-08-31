@@ -38,7 +38,7 @@ function generateMarkdown(data) {
   ## Tests <br>
   ${data.test} <br>
   ## Questions <br>
-  If you have any additional questions you can reach me at <a href="https://github.com/${data.github}" or ${data.email}! 
+  If you have any additional questions you can reach me at <a href="https://github.com/${data.github}"> my Github page </a> or at ${data.email}! 
 
 `;
 }
