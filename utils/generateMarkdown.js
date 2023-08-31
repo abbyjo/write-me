@@ -1,5 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+//Function to render license
 function renderLicenseBadge(license) {
   if (license === "None") {return ""
 } else if (license === "MIT") {return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
@@ -7,23 +6,16 @@ function renderLicenseBadge(license) {
 } else if (license === "ISC") {return `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`
 } else if (license === "MPL 2.0") {return `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`
 }
-
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+//Function to render license section
 function renderLicenseSection(license) {
-  if (data.license === "None") {return ""
+  if (license === "None") {return ""
 } else {return `This project is covered under the ${license} license.`}
 
 }
 
 // Function to generate markdown for README
-    //note 2 self: 'data' passed in will be the answers user provides in a data object
 function generateMarkdown(data) {
   return `
   # ${data.title} ${renderLicenseBadge(data.license)}
@@ -51,4 +43,4 @@ function generateMarkdown(data) {
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = {generateMarkdown}

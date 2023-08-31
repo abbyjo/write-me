@@ -1,8 +1,8 @@
 //Required packages 
-const md = require('./utils/generateMarkdown.js');
+const md = require('./utils/generateMarkdown');
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown.js');
+
 
 //Array of questions for user input
 const questions = [
@@ -54,7 +54,7 @@ const questions = [
       },
 ];
 
-// TODO: Create a function to write README file
+//Function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, md.generateMarkdown(data), function (err){
        if (err) throw err;
@@ -62,10 +62,11 @@ function writeToFile(fileName, data) {
     })
 }
 
-// TODO: Create a function to initialize app
+//Function to initialize app
 function init() {
-    inquirer.prompt(questions)
-
+    inquirer.prompt(questions).then(answers => {
+        writeToFile("README.md", answers)
+    })
 }
 
 // Function call to initialize app
